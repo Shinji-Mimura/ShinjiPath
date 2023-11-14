@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Login - Wicked LTDA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-one-third-desktop">
+                    <div class="box has-background-white-bis has-text-centered">
+                        <h1 class="title">Login</h1>
+
+                        <!-- Login Form -->
+                        <form id="loginForm" method="post">
+                            <div class="field">
+                                <label class="label">E-mail</label>
+                                <div class="control">
+                                    <input class="input" type="text" name="username" id="username"
+                                        placeholder="Your E-mail" required>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label">Password</label>
+                                <div class="control">
+                                    <input class="input" type="password" name="password" id="password"
+                                        placeholder="Your Password" required>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <div class="control">
+                                    <button type="submit" class="button is-link is-fullwidth"
+                                        id="loginButton">Login</button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- Optional Error Message -->
+                        {% if error %}
+                        <div class="notification is-danger">
+                            {{ error }}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        $(document).ready(function () {
+            $('#loginForm').submit(function (event) {
+                event.preventDefault();
+                var formData = {
+                    'username': $('input[name=username]').val(),
+                    'password': $('input[name=password]').val()
+                };
+                $.ajax({
+                    type: 'POST',
+                    url: '/login',
+                    data: JSON.stringify(formData),
+                    contentType: 'application/json',
+                    dataType: 'text',
+                    encode: true
+                })
+                    .done(function (data, textStatus, jqXHR) {
+                        // Check if there is a redirect
+                        if (jqXHR.status === 302 || (jqXHR.status === 200 && jqXHR.getResponseHeader('Location'))) {
+                            var redirectUrl = jqXHR.getResponseHeader('Location');
+                            window.location.href = redirectUrl;
+                        } else {
+                            var redirectUrl = jqXHR.getResponseHeader('Location');
+                            window.location.href = redirectUrl;
+                        }
+                    })
+                    .fail(function (jqXHR, textStatus, errorThrown) {
+                        console.log('Error: ' + textStatus);
+                        // Handle other types of errors here
+                    });
+            });
+        });
+    </script>    
+
+</body>
+
+</html>

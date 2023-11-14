@@ -2,7 +2,7 @@ from flask import request, jsonify
 from functools import wraps
 import jwt
 
-def middleware(f):
+def token_required(f):
     @wraps(f)
     def decorated(*args, **kwargs):
         token = request.headers.get('Authorization')
