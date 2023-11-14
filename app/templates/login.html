@@ -14,24 +14,24 @@
         <div class="container">
             <div class="columns is-centered">
                 <div class="column is-one-third-desktop">
-                    <div class="box has-background-white-bis has-text-centered">
-                        <h1 class="title">Login</h1>
+                    <div class="box has-background-white-bis">
+                        <h1 class="title has-text-centered">Login</h1>
 
                         <!-- Login Form -->
-                        <form id="loginForm" method="post">
+                        <form id="loginForm" method="post" action="{{ url_for('login_method')}}">
                             <div class="field">
                                 <label class="label">E-mail</label>
                                 <div class="control">
                                     <input class="input" type="text" name="username" id="username"
-                                        placeholder="Your E-mail" required>
+                                        placeholder="E-mail" required>
                                 </div>
                             </div>
 
                             <div class="field">
-                                <label class="label">Password</label>
+                                <label class="label">Senha</label>
                                 <div class="control">
                                     <input class="input" type="password" name="password" id="password"
-                                        placeholder="Your Password" required>
+                                        placeholder="Senha" required>
                                 </div>
                             </div>
 
@@ -45,8 +45,8 @@
 
                         <!-- Optional Error Message -->
                         {% if error %}
-                        <div class="notification is-danger">
-                            {{ error }}
+                        <div class="notification is-danger has-text-centered" style="margin-top: 10px;">
+                            <b>{{ error }}</b>
                         </div>
                         {% endif %}
                     </div>
@@ -54,41 +54,6 @@
             </div>
         </div>
     </section>
-
-
-    <script>
-        $(document).ready(function () {
-            $('#loginForm').submit(function (event) {
-                event.preventDefault();
-                var formData = {
-                    'username': $('input[name=username]').val(),
-                    'password': $('input[name=password]').val()
-                };
-                $.ajax({
-                    type: 'POST',
-                    url: '/login',
-                    data: JSON.stringify(formData),
-                    contentType: 'application/json',
-                    dataType: 'text',
-                    encode: true
-                })
-                    .done(function (data, textStatus, jqXHR) {
-                        // Check if there is a redirect
-                        if (jqXHR.status === 302 || (jqXHR.status === 200 && jqXHR.getResponseHeader('Location'))) {
-                            var redirectUrl = jqXHR.getResponseHeader('Location');
-                            window.location.href = redirectUrl;
-                        } else {
-                            var redirectUrl = jqXHR.getResponseHeader('Location');
-                            window.location.href = redirectUrl;
-                        }
-                    })
-                    .fail(function (jqXHR, textStatus, errorThrown) {
-                        console.log('Error: ' + textStatus);
-                        // Handle other types of errors here
-                    });
-            });
-        });
-    </script>    
 
 </body>
 
