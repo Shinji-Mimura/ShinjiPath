@@ -110,14 +110,14 @@ def trickpage():
 
 # Dashboard
 @app.route("/dashboard", methods=["GET"])
-# @check_admin
+@check_admin
 def dashboard():
     return render_template("dashboard.html")
 
 
 # upload XML file route
 @app.route("/upload", methods=["POST"])
-# check_admin
+@check_admin
 @app.route('/upload', methods=['POST'])
 def upload_file():
     if 'xmlfile' not in request.files:
@@ -139,6 +139,6 @@ def upload_file():
 
 # download XML file route
 @app.route("/download-template", methods=["GET"])
-# @check_admin
+@check_admin
 def download():
     return send_from_directory("static/template_xml", "template.xml", as_attachment=True)
