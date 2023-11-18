@@ -17,8 +17,21 @@ def create_db():
 
         db.session.commit()
 
+def check_db_exists():
+    with app.app_context():
+        from app.models import User
+
+        try:
+            User.query.first()
+        except:
+            return False
+
+        return True
+
 if __name__ == '__main__':
 
-    #create_db()
+    if not check_db_exists():
+        print("Criando banco de dados...")
+        create_db()
 
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000)

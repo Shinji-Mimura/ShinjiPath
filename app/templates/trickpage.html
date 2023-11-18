@@ -2,44 +2,52 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Dashboard</title>
+
+    <!-- Bulma is included -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
-    <title>Hello</title>
-    <style>
 
-        .card {
-            border-radius: 10px;
-            padding: 20px;
-        }
-
-        .card-content {
-            display: flex;
-            align-items: center;
-        }
-    </style>
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-    <section class="hero is-fullheight">
-        <div class="hero-body">
-            <div class="container">
-                <div class="card">
-                    <div class="card-image">
-                        <figure class="image is-128x128" >
-                            <img src="../static/images/ducky.png" alt="">
-                        </figure>
-                    </div>
-                    <div class="card-content">
-                        <div class="media-content">
-                            <p class="title is-4">Bem Vindo!</p>
-                            <p class="subtitle is-6">FLAG 1 AQUI</p>
+    <div id="app">
+        <section class="hero is is-fullheight" style="background: linear-gradient(to right, #36D1DC, #5B86E5);">
+            <div class="hero-body">
+                <div class="container">
+                    <div class="columns">
+                        <div class="column is-half">
+                            <h1 class="title is-1" style="color: white;">
+                                Olá Contato
+                            </h1>
+                            <h2 class="subtitle is-3">
+                                <strong>TAC_2023{7e9c3c58b9a3f1e3dd0344d9e2a3b1b7e3b7fede44e9e4d8c6f9c4e305d6e7c9}</strong>
+                            </h2>
+                            <button class="button is-large is-warning" onclick="window.location.href='/dashboard'">
+                                Acessar Dashboard de Administradores
+                            </button>
+                        </div>
+                        <div class="column is-half">
+                            <figure class="image" style="border-radius: 15px; overflow: hidden;">
+                                <img src="../static/images/trickimage.png" alt="Imagem decorativa" style="border-radius: 15px;">
+                            </figure>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+            
+        </section>        
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+
+    <!-- Icons below are for demo only. Feel free to use any icon pack. Docs: https://bulma.io/documentation/elements/icon/ -->
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css">
 </body>
 
 </html>

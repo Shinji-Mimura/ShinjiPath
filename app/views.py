@@ -12,7 +12,9 @@ from app import app
 import jwt, datetime
 from functools import wraps
 from werkzeug.utils import secure_filename
-import os, mimetypes
+import os
+from lxml import etree
+import cgi
 
 
 # generate jwt
@@ -20,7 +22,7 @@ def generate_jwt(email, role):
     payload = {
         "user_email": email,
         "exp": datetime.datetime.utcnow() + datetime.timedelta(minutes=120),
-        "flag": "Flag 3",
+        "flag": "TAC_2023{3a4b5c6d7e8f9a0b1c2d3e4f5g6h7i8j9k0l1m2n3o4p5q6r7s8t9u0v1w2x3y4z5}",
         "role": role,
     }
     return jwt.encode(
@@ -99,7 +101,6 @@ def login_method():
 
         return redirect(url_for("login_method", error=error))
 
-
 # Trick page
 @app.route("/trickpage", methods=["GET"])
 @check_token
@@ -117,33 +118,27 @@ def dashboard():
 # upload XML file route
 @app.route("/upload", methods=["POST"])
 # check_admin
+@app.route('/upload', methods=['POST'])
 def upload_file():
-    upload_folder = "app/static/uploads"
-    allowed_mime_types = ["application/xml", "text/xml"]
+    if 'xmlfile' not in request.files:
+        return jsonify({"message": "Nenhum arquivo enviado!"}), 400
 
-    if "xmlfile" not in request.files:
-        return (jsonify({"message": "O arquivo deve ser exclusivamente do tipo XML"}),400,)
+    xmlfile = request.files['xmlfile']
+    if xmlfile.filename == '':
+        return jsonify({"message": "Nenhum arquivo enviado!"}), 400
 
-    file = request.files["xmlfile"]
-    if file.filename == "":
-        return jsonify({"message": "Arquivo não selecionado"}), 400
+    try:
+        # Configuração vulnerável: permite a resolução de entidades externas
+        parser = etree.XMLParser(load_dtd=True, no_network=False, resolve_entities=True)
+        doc = etree.parse(xmlfile.stream, parser)
+        parsed_xml = etree.tostring(doc, pretty_print=True).decode()
+    except etree.XMLSyntaxError as e:
+        return jsonify({"message": "Erro ao processar XML: " + str(e)}), 400
 
-    mime_type = mimetypes.guess_type(file.filename)[0]
-    if mime_type not in allowed_mime_types:
-        return (jsonify({"message": "O arquivo deve ser exclusivamente do tipo XML"}),400,)
-
-    if file:
-        filename = secure_filename(file.filename)
-        timestamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
-        save_path = os.path.join(upload_folder, f"{filename.rsplit('.', 1)[0]}_{timestamp}.xml")
-        file.save(save_path)
-        return jsonify({"message": "Upload feito com sucesso!"}), 200
-
-    return (jsonify({"message": "Algum erro aconteceu no processo de upload, tente novamente!"}),500,)
-
+    return jsonify({"message": "XML processado com sucesso!", "xml": parsed_xml}), 200
 
 # download XML file route
 @app.route("/download-template", methods=["GET"])
-@check_admin
+# @check_admin
 def download():
     return send_from_directory("static/template_xml", "template.xml", as_attachment=True)
