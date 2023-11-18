@@ -1,0 +1,32 @@
+.rounded-image {
+    border-radius: 15px;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.is-visible .rounded-image {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.fade-in-text {
+    opacity: 0;
+    transform: translateX(50px); /* Initial position for right-to-left effect */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.is-visible .fade-in-text {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.core-value-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+}
+
+.core-value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}

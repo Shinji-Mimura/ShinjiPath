@@ -2,111 +2,270 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>Wicked LTDA</title>
+    <title>Wicked - Technology Innovations</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="../static/css/custom.css">
+
 </head>
 
 <body>
-
-    <!-- Cabeçalho -->
-    <section class="hero is-black">
-        <div class="hero-body">
-            <div class="container">
-                <div class="columns is-vcentered">
-                    <div class="column">
-                        <p class="title">
-                            Wicked LTDA
-                        </p>
-                        <p class="subtitle">
-                            Inovação e Tecnologia
-                        </p>
-                    </div>
-                    <div class="column is-narrow">
-                        <!-- Botão de Login -->
-                        <a href="/login" class="button is-light is-pulled-right">
-                            Login
+    <!-- Header Section -->
+    <nav class="navbar is-transparent">
+        <div class="navbar-menu">
+            <!-- Left Side of the Navbar -->
+            <div class="navbar-start">
+                <a class="navbar-item" href="#home">Home</a>
+                <a class="navbar-item" href="#about">About Us</a>
+                <a class="navbar-item" href="#products">Products</a>
+                <a class="navbar-item" href="#careers">Careers</a>
+                <a class="navbar-item" href="#contact">Contact</a>
+            </div>
+    
+            <!-- Right Side of the Navbar -->
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-primary" href="/login">
+                            <strong>Login</strong>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </nav>
+    
 
-
-    <!-- Sobre a Empresa -->
-    <section class="section">
-        <div class="container has-text-centered">
-            <h1 class="title">Sobre Nós</h1>
-            <p>
-                A Wicked LTDA é uma empresa líder em soluções tecnológicas inovadoras. Nossa missão é fornecer produtos
-                e serviços de alta qualidade que atendam às necessidades do mercado moderno.
-            </p>
-            <figure class="image has-text-centered" style="margin-top: 20px;">
-                <img src="../static/images/executives.jpeg"
-                    style="max-width: 50%; max-height: 50%; display: block; margin: auto; border: 3px solid #ddd; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
-            </figure>
+    <!-- Research and Development Section -->
+    <section class="section fade-in-section" id="#home">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column is-half">
+                    <figure class="image">
+                        <img src="../static/images/wicked_logo.png" alt="Modern Technology Laboratory"
+                            class="rounded-image">
+                    </figure>
+                </div>
+                <div class="column is-half fade-in-text">
+                    <h2 class="title">Pioneering Research & Development</h2>
+                    <p class="subtitle">At the Forefront of Technological Advancement</p>
+                    <p>
+                        Wicked is dedicated to pioneering research and development, pushing the boundaries of
+                        technology.
+                        Our state-of-the-art laboratories are the birthplace of innovations that shape the future. From
+                        AI advancements to sustainable energy solutions, we're committed to solving complex challenges
+                        and enhancing life through technology.
+                    </p>
+                    <br>
+                    <button class="button is-link">Explore Our Innovations</button>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Serviços -->
-    <section class="section">
-        <div class="container has-text-centered">
-            <h1 class="title">Nossos Serviços</h1>
-            <div class="columns">
-                <!-- Card para Desenvolvimento de Software -->
-                <div class="column">
-                    <div class="card" style="border-radius: 15px; background-color: #f0f0f0;">
+
+    <!-- About Wicked Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="title">About Wicked</h2>
+            <p class="subtitle">
+                Leading the Future of Technology
+            </p>
+            <div class="content">
+                <p>
+                    At Wicked, we're driven by the passion to revolutionize the way technology integrates with daily
+                    life. Established in 2023, our journey began with a vision to blend cutting-edge research with
+                    practical applications, making advanced technology accessible to everyone.
+                </p>
+                <p>
+                    Our mission is to innovate relentlessly, pushing the boundaries of what's possible. We believe in
+                    creating solutions that not only meet the needs of today but also pave the way for a sustainable,
+                    tech-driven future. From AI-driven platforms to eco-friendly gadgets, our products are designed to
+                    enhance efficiency, productivity, and quality of life.
+                </p>
+                <p>
+                    With a team of world-class engineers, developers, and visionaries, we are committed to fostering a
+                    culture of creativity, diversity, and ethical responsibility. At Wicked, we're not just building
+                    technology; we're building a brighter future for all.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Products Section -->
+    <section id="products" class="section">
+        <div class="container">
+            <h2 class="title">Our Products</h2>
+            <div class="columns is-multiline">
+                <!-- Product Card 1 -->
+                <div class="column is-one-third">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="../static/images/relogio.png" alt="Product 1">
+                            </figure>
+                        </div>
                         <div class="card-content">
-                            <p class="title is-4">Desenvolvimento de Software</p>
-                            <p>Desenvolvemos soluções de software personalizadas para atender às necessidades
-                                específicas de nossos clientes.</p>
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4">Futuristic Smartwatch</p>
+                                    <p class="subtitle is-6">IoT</p>
+                                </div>
+                            </div>
+                            <div class="content">
+                                This sleek, modern smartwatch boasts a curved touchscreen display, offering the latest
+                                in health tracking technology. Equipped with wireless charging capabilities, its
+                                minimalist and futuristic design emphasizes a user-friendly interface, making it perfect
+                                for the tech-savvy individual on the go <br>
+                                <a href="#">Learn more</a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card para Consultoria em TI -->
-                <div class="column">
-                    <div class="card" style="border-radius: 15px; background-color: #e8e8e8;">
+                <!-- Product Card 2 -->
+                <div class="column is-one-third">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="../static/images/wireless.png" alt="Product 2">
+                            </figure>
+                        </div>
                         <div class="card-content">
-                            <p class="title is-4">Consultoria em TI</p>
-                            <p>Oferecemos consultoria especializada para ajudar empresas a otimizar seus processos de
-                                TI.</p>
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4">Wireless Home Assistant Speaker</p>
+                                    <p class="subtitle is-6">Home Assistant</p>
+                                </div>
+                            </div>
+                            <div class="content">
+                                Experience the future of home automation with this wireless home assistant speaker.
+                                Featuring advanced voice recognition technology and a holographic display interface, its
+                                cylindrical shape and ambient lighting blend aesthetics with functionality, creating a
+                                smart home device that's as stylish as it is practical
+                                <br>
+                                <a href="#">Learn more</a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card para Suporte Técnico -->
-                <div class="column">
-                    <div class="card" style="border-radius: 15px; background-color: #d0d0d0;">
-                        <div class="card-content">
-                            <p class="title is-4">Suporte Técnico</p>
-                            <p>Nossa equipe de suporte está sempre pronta para ajudar com quaisquer problemas ou dúvidas
-                                técnicas.</p>
+                <!-- Product Card 3 -->
+                <div class="column is-one-third">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="../static/images/scooter.png" alt="Product 3">
+                            </figure>
                         </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4">Electric Self-Balancing Scooter</p>
+                                    <p class="subtitle is-6">Vehicle</p>
+                                </div>
+                            </div>
+                            <div class="content">
+                                Redefine urban mobility with our innovative electric self-balancing scooter. Its sleek
+                                design, enhanced with LED lights and a built-in GPS system, offers a compact and
+                                portable solution for eco-friendly personal transportation. Perfect for navigating the
+                                city streets with ease and style <br>
+                                <a href="#">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More Product Cards as needed... -->
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Careers Section -->
+    <section id="careers" class="section">
+        <div class="container">
+            <h2 class="title">Join Our Team</h2>
+            <p class="subtitle">
+                Explore exciting career opportunities at Wicked and become part of our innovative journey.
+            </p>
+
+            <!-- Career Opportunities -->
+            <div class="columns is-multiline">
+                <!-- Job Opportunity 1 -->
+                <div class="column is-one-third">
+                    <div class="card">
+                        <div class="card-content">
+                            <p class="title is-5">Software Developer</p>
+                            <p class="subtitle is-6">Technical Excellence & Creativity</p>
+                            <div class="content">
+                                Join our dynamic software development team and work on cutting-edge projects...
+                            </div>
+                        </div>
+                        <footer class="card-footer">
+                            <a href="#" class="card-footer-item">Learn More</a>
+                        </footer>
+                    </div>
+                </div>
+
+                <!-- Job Opportunity 2 -->
+                <div class="column is-one-third">
+                    <div class="card">
+                        <div class="card-content">
+                            <p class="title is-5">Product Manager</p>
+                            <p class="subtitle is-6">Leadership & Strategy</p>
+                            <div class="content">
+                                Drive the development and strategy of our innovative product line...
+                            </div>
+                        </div>
+                        <footer class="card-footer">
+                            <a href="#" class="card-footer-item">Learn More</a>
+                        </footer>
+                    </div>
+                </div>
+
+                <!-- Job Opportunity 3 -->
+                <div class="column is-one-third">
+                    <div class="card">
+                        <div class="card-content">
+                            <p class="title is-5">UX/UI Designer</p>
+                            <p class="subtitle is-6">Design & User Experience</p>
+                            <div class="content">
+                                Create intuitive and visually compelling designs for our digital platforms...
+                            </div>
+                        </div>
+                        <footer class="card-footer">
+                            <a href="#" class="card-footer-item">Learn More</a>
+                        </footer>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contato -->
-    <section class="section">
-        <div class="container has-text-centered">
-            <h1 class="title">Contato</h1>
-            <p>Entre em contato conosco pelo e-mail <b>contato@wicked.com</b> ou pelo telefone <b>(11) 1234-5678</b>.</p>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="title">Contact Us</h2>
+            <p class="subtitle">
+                Have questions or need assistance? Reach out to us, and we'll be happy to help -
+                <strong>contato@wicked.com</strong>
+            </p>
         </div>
     </section>
 
-    <!-- Rodapé -->
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="content has-text-centered">
-            <p>
-                <strong>Wicked LTDA</strong> por Wicked Team. Todos os direitos reservados.
-            </p>
+            <p>&copy; 2023 Wicked. All rights reserved.</p>
         </div>
     </footer>
 
+    <script src="../static/js/fadein.js"></script>
 </body>
 
 </html>

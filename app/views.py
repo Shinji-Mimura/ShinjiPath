@@ -20,6 +20,7 @@ def generate_jwt(email, role):
     payload = {
         "user_email": email,
         "exp": datetime.datetime.utcnow() + datetime.timedelta(minutes=120),
+        "flag": "Flag 3",
         "role": role,
     }
     return jwt.encode(

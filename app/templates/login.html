@@ -6,38 +6,48 @@
     <title>Login - Wicked LTDA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
 
-    <section class="section">
-        <div class="container">
-            <div class="columns is-centered">
-                <div class="column is-one-third-desktop">
-                    <div class="box has-background-white-bis">
-                        <h1 class="title has-text-centered">Login</h1>
+    <section class="section" style="height: 100vh;">
+        <div class="container is-flex is-align-items-center is-justify-content-center" style="height: 100%;">
+            <div class="columns is-vcentered">
+                <div class="column">
+                    <div class="box has-background-white">
+                        <h4 class="title is-4">Painel de Acesso</h4>
 
                         <!-- Login Form -->
                         <form id="loginForm" method="post" action="{{ url_for('login_method')}}">
+                            <!-- Email Field -->
                             <div class="field">
-                                <label class="label">E-mail</label>
-                                <div class="control">
-                                    <input class="input" type="text" name="username" id="username"
-                                        placeholder="E-mail" required>
-                                </div>
+                                <p class="control has-icons-left has-icons-right">
+                                    <input class="input" type="email" name="username" id="username" placeholder="Email"
+                                        required>
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-envelope"></i>
+                                    </span>
+                                </p>
                             </div>
 
+                            <!-- Password Field -->
                             <div class="field">
-                                <label class="label">Senha</label>
-                                <div class="control">
+                                <p class="control has-icons-left">
                                     <input class="input" type="password" name="password" id="password"
                                         placeholder="Senha" required>
-                                </div>
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-lock"></i>
+                                    </span>
+                                </p>
                             </div>
 
+                            <!-- Submit Button -->
                             <div class="field">
                                 <div class="control">
-                                    <button type="submit" class="button is-link is-fullwidth"
+                                    <button type="submit" class="button is-success is-fullwidth"
                                         id="loginButton">Login</button>
                                 </div>
                             </div>
@@ -54,6 +64,7 @@
             </div>
         </div>
     </section>
+
 
 </body>
 
