@@ -96,7 +96,7 @@ def login_method():
             if username == "contato@wicked.com":
                 token = generate_jwt(username, "employee")
                 response = make_response(redirect("trickpage"))
-                response.set_cookie("SessionToken", token)
+                response.set_cookie("SessionToken", token.decode('utf-8'))
                 return response
 
         return redirect(url_for("login_method", error=error))
@@ -118,7 +118,6 @@ def dashboard():
 # upload XML file route
 @app.route("/upload", methods=["POST"])
 @check_admin
-@app.route('/upload', methods=['POST'])
 def upload_file():
     if 'xmlfile' not in request.files:
         return jsonify({"message": "Nenhum arquivo enviado!"}), 400
@@ -129,7 +128,7 @@ def upload_file():
 
     try:
         # Configuração vulnerável: permite a resolução de entidades externas
-        parser = etree.XMLParser(load_dtd=True, no_network=False, resolve_entities=True)
+        parser = etree.XMLParser(load_dtd=True, no_network=True, resolve_entities=True)
         doc = etree.parse(xmlfile.stream, parser)
         parsed_xml = etree.tostring(doc, pretty_print=True).decode()
     except etree.XMLSyntaxError as e:

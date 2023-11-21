@@ -12,7 +12,7 @@ def create_db():
             db.session.add(admin_user)
 
         if not User.query.filter_by(email='contato@wicked.com').first():
-            contato_user = User(email='contato@wicked.com', password='senha_contato')
+            contato_user = User(email='contato@wicked.com', password='azerty')
             db.session.add(contato_user)
 
         db.session.commit()
