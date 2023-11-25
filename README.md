@@ -20,7 +20,10 @@ docker run -d --restart always -p 5000:5000 shpath
 
 ### Procedimento:
 
-1. **Acesso ao Painel:** Após a autenticação, vá até o painel do navegador onde os tokens de sessão são armazenados.
+1. **Acesso ao Painel:**
+   - **Google Chrome:** Abra as ferramentas de desenvolvedor usando "Inspecionar" e encontre "Cookies" na guia "Application".
+   - **Mozilla Firefox:** Use "Inspecionar Elemento" para acessar as ferramentas de desenvolvedor e localize "Cookies" na guia "Storage".
+   - **Microsoft Edge:** Acesse as ferramentas de desenvolvedor com "Inspecionar" e encontre "Cookies" na guia "Application".
 2. **Identificação do Token:** Encontre o "SessionToken" obtido após o login.
 3. **Decodificação do Token:** Use o site [jwt.io](https://jwt.io) para decodificar o token JWT.
 4. **Localização da Bandeira:** Procure a bandeira no campo "flag" do token decodificado.
@@ -29,7 +32,10 @@ docker run -d --restart always -p 5000:5000 shpath
 
 ### Etapas:
 
-1. **Acesso ao Painel de Tokens:** Com autenticação bem-sucedida, acesse o painel do navegador.
+1. **Acesso ao Painel:**
+   - **Google Chrome:** Abra as ferramentas de desenvolvedor usando "Inspecionar" e encontre "Cookies" na guia "Application".
+   - **Mozilla Firefox:** Use "Inspecionar Elemento" para acessar as ferramentas de desenvolvedor e localize "Cookies" na guia "Storage".
+   - **Microsoft Edge:** Acesse as ferramentas de desenvolvedor com "Inspecionar" e encontre "Cookies" na guia "Application".
 2. **Observação do Token:** Identifique o "SessionToken".
 3. **Decodificação do JWT:** Use [jwt.io](https://jwt.io) para decodificar o token JWT.
 4. **Alteração de Perfil:** Mude o valor de "role" de "employee" para "admin".
