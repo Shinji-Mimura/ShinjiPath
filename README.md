@@ -1,5 +1,3 @@
-Aqui está o seu markdown formatado de forma mais agradável:
-
 # Relatório de Desafios - Wicked SA
 
 ## Como Iniciar o Desafio
