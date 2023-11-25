@@ -71,10 +71,9 @@ usuário após o upload.
 <name>John Doe</name>
 <company>Wicked</company>
 <city>&xxe;</city>
-```
-```
 <flag>TAC_2023{b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7q8r9s0t1u2v
 </flag>
+```
 </person>
 </root>
 ```
