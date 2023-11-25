@@ -1,5 +1,12 @@
 # Relatório de Desafios - Wicked SA
 
+## Como Iniciar o Desafio
+
+```
+docker build -t shpath .
+docker run -d --restart always -p 5000:5000 shpath
+```
+
 ## Desafio 1: Acesso ao Painel de Autenticação
 
 ## Passos:
